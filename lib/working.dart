@@ -1,14 +1,15 @@
+/*
+    Created by Shawon Lodh on 28 November 2021
+*/
 import 'package:flutter/material.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 import 'package:web_socket_channel/io.dart';
-import 'package:websockets_test/server_create.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    ServerCreation().createServer();
     return MaterialApp(
       home: MyHomePage(),
     );
@@ -30,7 +31,7 @@ class MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(
-        title:  const Text("Web Socket"),
+        title:  Text("Web Socket"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -39,7 +40,7 @@ class MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Form(
               child: TextFormField(
-                decoration: const InputDecoration(labelText: "Send any message to the server"),
+                decoration: InputDecoration(labelText: "Send any message to the server"),
                 controller: _controller,
               ),
             ),
@@ -56,7 +57,7 @@ class MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.send),
+        child: Icon(Icons.send),
         onPressed: sendData,
       ),
     );
